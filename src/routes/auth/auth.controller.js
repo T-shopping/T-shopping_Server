@@ -19,12 +19,12 @@ app.use(session({
 }))
 exports.register = (res,req) =>{
     const User_info = {
-        "email" : req.body.email,
-        "user_name" : req.body.user_name,
-        "address": req.body.address,
-        "branch_number": req.body.branch_number,
-        "phone" : req.body.phone,
-        "gender": req.body.gender
+        email : req.body.email,
+        user_name : req.body.user_name,
+        address: req.body.address,
+        branch_number: req.body.branch_number,
+        phone : req.body.phone,
+        gender: req.body.gender
     }
     connenction.query('INSERT INTO User_info SET ?' , User_info, function (error, results, fields) {
         if (error) {
