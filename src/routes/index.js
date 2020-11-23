@@ -1,8 +1,8 @@
-const route = require('express').Router();
-
-// const auth = require('./auth');
-// const commity = require('./commity');
-// const shop = require('./shop');
+const experss = require('express');
+const app = require('./community/index');
 
 
-module.exports = route;
+
+module.exports = {
+    app
+};
