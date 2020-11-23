@@ -2,8 +2,6 @@ require('dotenv').config();
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
-var fs = require('fs');
-var ejs = require('ejs');
 var bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: false }));
