@@ -60,7 +60,7 @@ router.get('/passing/:cur', function(req, res){
             "endPage": endPage
             };
 
-            var queryString = 'select * from 테이블이름 order by id desc limit ?,?';
+            var queryString = 'select * from 테이블이름 order by id desc limit ?, ?';
             getConnection().query(queryString, [no, page_size], function(error, result){
                 if(error){
                     console.log("페이징 에러 : " + error);
@@ -99,7 +99,7 @@ router.get('/delete/:id', function(req, res){
 router.post('/insert', function(req, res){
     console.log("삽입 진행");
     var body = req.body;
-    getConnection().query('insert into products(name) values(?,?,?)', [body.name, body.num, body.section], function(){
+    getConnection().query('insert into products(name) values(?,?,?)', [], function(){
         res.json({
             'code': 200,
             'msg': 'Insert success'
@@ -124,7 +124,7 @@ router.get('/edit/:id', function(req, res){
 router.post('/edit/:id', function(req, res){
     console.log("수정 진행");
     var body = req.body;
-    getConnection().query('update products set name = ?, num=?, series=? where id = ?', [body.name, body.num, body.section, req.params.id], function(){
+    getConnection().query('update products set ', [], function(){
         res.json({
             'code': 200,
             'msg': 'Modification success'
