@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+const authMiddleWare = require('../../middleWare/auth');
 const createShop = require('./Shop.Ctrl/CreateShop');
 const deleteShop = require('./Shop.Ctrl/DeleteShop');
 const getShops = require('./Shop.Ctrl/GetShops');
@@ -7,10 +8,10 @@ const getShop = require('./Shop.Ctrl/GetShop');
 const searchShop = require('./Shop.Ctrl/SearchShop');
 const purchaseShop = require('./Shop.Ctrl/PurchaseShop');
 
-router.post('/create', createShop);
-router.delete('/delete', deleteShop);
-router.get('/getlist', getShops);
-router.get('/getshop', getShop);
-router.get('/purchase', purchaseShop);
+router.post('/create', authMiddleWare.user, createShop);
+router.delete('/delete', authMiddleWare.user, deleteShop);
+router.get('/getlist', authMiddleWare.guest, getShops);
+router.get('/getshop', authMiddleWare.guest, getShop);
+router.get('/purchase', authMiddleWare.user, purchaseShop);
 
 module.exports = router;
