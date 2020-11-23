@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const authMiddleWare = require('../../middleWare/auth');
+const authMiddleWare = require('../../middleware/auth');
 const createShop = require('./Shop.Ctrl/CreateShop');
 const deleteShop = require('./Shop.Ctrl/DeleteShop');
 const getShops = require('./Shop.Ctrl/GetShops');
