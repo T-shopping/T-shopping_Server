@@ -5,7 +5,6 @@ const createShop = require('./Shop.Ctrl/CreateShop');
 const deleteShop = require('./Shop.Ctrl/DeleteShop');
 const getShops = require('./Shop.Ctrl/GetShops');
 const getShop = require('./Shop.Ctrl/GetShop');
-const searchShop = require('./Shop.Ctrl/SearchShop');
 const purchaseShop = require('./Shop.Ctrl/PurchaseShop');
 
 router.post('/create', authMiddleWare.user, createShop);
