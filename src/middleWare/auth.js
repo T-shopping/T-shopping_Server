@@ -12,10 +12,6 @@ const guest = async (req, res) => {
 
 }
 
-const verification = async (req, res) => {
-  
-}
-
 module.exports = {
   admin,
   user,

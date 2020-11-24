@@ -8,9 +8,9 @@ const getShop = require('./Shop.Ctrl/GetShop');
 const purchaseShop = require('./Shop.Ctrl/PurchaseShop');
 
 router.post('/create', authMiddleWare.user, createShop);
-router.delete('/delete', authMiddleWare.user, deleteShop);
+router.delete('/delete/:idx', authMiddleWare.user, deleteShop);
 router.get('/getlist', authMiddleWare.guest, getShops);
-router.get('/getshop', authMiddleWare.guest, getShop);
-router.get('/purchase', authMiddleWare.user, purchaseShop);
+router.get('/getshop/:idx', authMiddleWare.guest, getShop);
+router.post('/purchase/:idx', authMiddleWare.user, purchaseShop);
 
 module.exports = router;
