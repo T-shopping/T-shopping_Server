@@ -1,10 +1,11 @@
-const experss = require('express');
-const app = require('./community/index');
+const router = require('express').Router();
 
-//const auth = require('./auth');
-// const commity = require('./commity');
-// const shop = require('./shop');
+const auth = require('./auth');
+const community = require('./community');
+const shop = require('./shop');
 
-module.exports = {
-    app
-};
+router.use('/auth', auth);
+router.use('/community', community);
+router.use('/shop', shop);
+
+module.exports = router

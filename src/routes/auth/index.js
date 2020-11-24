@@ -1,5 +1,7 @@
-const express = requier(express);
+const express = require('express');
 const auth = express();
 
-auth.post('/reister/local', require('./auth.controller').reqister);
-auth.post('/login/local', require('./auth.controller').login);
+const authCtroller = require('./auth.controller')
+
+auth.post('/reister/local', authCtroller.reqister);
+auth.post('/login/local', authCtroller.login);
