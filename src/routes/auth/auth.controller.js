@@ -17,7 +17,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
-exports.reqister = (res,req) =>{
+exports.register = (res,req) =>{
     const User_info = {
         "email" : req.body.email,
         "user_name" : req.body.user_name,
