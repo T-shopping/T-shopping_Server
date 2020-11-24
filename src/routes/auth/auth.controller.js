@@ -2,15 +2,21 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
-const dbconfig = require('');
-const dbOptions = dbconfig;
+const { user } = process.env;
+const { password } = process.env;
+const { database } = process.env;
+const dbOptions = {
+    host: 'localhost',
+    user: user,
+    password: password,
+    database: database
+};
 app.use(session({
-    secret: process.env.secret,
+    secret: process.env.database,
     store: new MySQLStore(dbOptions),
     resave: false,
     saveUninitialized: false
 }))
-
 exports.reqister = (res,req) =>{
     const User_info = {
         "email" : req.body.email,
@@ -69,8 +75,6 @@ exports.login = (res, req) =>{
                     "success": "Email does not exists"
                 });
             }
-
-
         }
     }
 }
