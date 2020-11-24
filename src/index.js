@@ -7,7 +7,7 @@ const api = require('./routes');
 app.use( bodyParser.urlencoded({ extended : true }));
 app.use( bodyParser.json());
 
-app.use('/', api);
+// app.use('/', api);
 
 app.get('/', (req, res) => {
   res.send('GET request to the homepage');
